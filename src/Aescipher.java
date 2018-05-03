@@ -5,6 +5,27 @@
  * the cipher
  */
 
+/*
+TODO
+processinput(): String
+->
+
+generateWMatrix(
+  col_valueforInput = 8 (rows),
+  column size = 60 (cols),
+  rounds = 15
+): String
+->
+
+generateCipher(
+  masterKey_encrypt, user provided key
+  masterText_encrypt, user plaintext
+  column_size = 60 (cols)
+  col_valueforInput = 8 (rows),
+  rounds = 15
+): String
+ */
+
 public class Aescipher {
 
   // masterKey array is declared to save the key user gives
@@ -59,6 +80,7 @@ public class Aescipher {
   public static String generateCipher(String[][] masterKey, String[][] masterText, int column_size, int row_size,
                                       int rounds) {
 
+
     String[][] keyHex = new String[4][4];
     StringBuilder outValue = new StringBuilder();
     int WCol = 0;
@@ -111,6 +133,7 @@ public class Aescipher {
     String cipherW = "";
     for (int row = 0; row < 4; row = row + 1) {
       for (int column = 0; column < col_valueforInput; column++) {
+
         keyMatrixW_encrypt[row][column] = masterKey_encrypt[row][column];
       }
     }
@@ -120,6 +143,7 @@ public class Aescipher {
     // Processing the rest keys for keyMatrixW , by taking an intermediate
     // matrix wNewMatrix for processing purpose
     String[][] wNewMatrix = null;
+    //go through all columns
     for (int column = col_valueforInput; column < column_size; column++) {
       /**
        * if the column number is not a multiple of 4 the following steps
@@ -128,12 +152,16 @@ public class Aescipher {
 
       if (column % col_valueforInput != 0 && col_valueforInput == 8) {
         if (column % 4 == 0) {
+
+          //column is divisible by 4
           for (int row = 0; row < 4; row++) {
             keyMatrixW_encrypt[row][column] = aesSbox(keyMatrixW_encrypt[row][column - 1]);
             keyMatrixW_encrypt[row][column] = exclusiveOr(
                 keyMatrixW_encrypt[row][column - col_valueforInput], keyMatrixW_encrypt[row][column]);
           }
         } else {
+
+          //column not divisible by 4
           for (int row = 0; row < 4; row++) {
 
             keyMatrixW_encrypt[row][column] = exclusiveOr(
