@@ -180,12 +180,13 @@ public class Aescipher {
       masterText = aesStateXor(masterText, keyHex);
       //System.out.println("after xor = " + MatrixToString(masterText));
     }
-    // System.out.println("The Cipher Text is");
+
     for (int cols = 0; cols < 4; cols++) {
       for (int row = 0; row < 4; row++) {
         outValue = outValue.append(masterText[row][cols]);
       }
     }
+
     return outValue.toString();
   }
 

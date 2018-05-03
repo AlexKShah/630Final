@@ -8,8 +8,8 @@ public class Driver {
   public static void main(String[] args) {
 
     String plainText = "";
-    String inputkey = args[0];
-    plainText = args[1];
+    String inputkey = args[0].toUpperCase();
+    plainText = args[1].toUpperCase();
     String verbose = args[2];
     int row_size = 0;
     int column_size = 0;
@@ -70,7 +70,7 @@ public class Driver {
         System.out.println(cipher);
       }
 
-      String decipher = Aesdecipher.processInput(cipher, inputkey, size_basket);
+      String decipher = Aesdecipher.processInput(cipher, inputkey, size_basket).toUpperCase();
 
       if (padLength > 0) {
         if (verbose.equals("1")) {
