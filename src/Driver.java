@@ -37,11 +37,11 @@ public class Driver {
       rounds = 15;
     }
     size_basket[0] = row_size;
-    System.out.println("row size = "+row_size);
+    //System.out.println("row size = "+row_size);
     size_basket[1] = column_size;
-    System.out.println("col size = "+column_size);
+    //System.out.println("col size = "+column_size);
     size_basket[2] = rounds;
-    System.out.println("rounds = "+rounds);
+    //System.out.println("rounds = "+rounds);
     /**
      * Based on input message size padding is decided
      */

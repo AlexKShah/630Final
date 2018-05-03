@@ -144,51 +144,50 @@ public class Aescipher {
 
   public static String generateCipher(String[][] masterKey, String[][] masterText, int columnSize, int rowSize,
                                       int rounds) {
-
     String[][] keyHex = new String[4][4];
     StringBuilder outValue = new StringBuilder();
-    int WCol = 0;
-    int roundCounter = 0;
-    while (WCol < columnSize) {
-      for (int cols = 0; cols < 4; cols++, WCol++) {
-        for (int row = 0; row < 4; row++) {
-          keyHex[row][cols] = wMatrix[row][WCol];
+
+    //add round 0 xor
+    masterText = aesStateXor(masterText, masterKey);
+
+    //System.out.println("round0 = " + MatrixToString(masterText));
+    for (int round = 1; round < 11; round++) {
+      for (int j = 0; j < 4; j++) {
+        for (int k = 0; k < 4; k++) {
+          keyHex[k][j] = wMatrix[k][(round * 4) + j];
         }
       }
+      //fixes keygen!
       keyHex = rowtocol(keyHex);
-      System.out.println(MatrixToString(keyHex));
 
-      if (roundCounter != (rounds - 1)) {
-        masterText = aesStateXor(masterText, keyHex);
-        // Exclusive or output is passed to nibble substitution is
-        // called
-        masterText = aesNibbleSub(masterText);
-        // Nibble substituted output is called to shiftrows method
-        masterText = aesShiftRow(masterText);
-        // Shifted output is sent to mixing columns function
-        if (roundCounter != (rounds - 1)) {
-          masterText = aesMixColumn(masterText);
-        }
+      //System.out.println("round=" +round);
+      //System.out.println("keyhex="+MatrixToString(keyHex));
 
-      } else
-        // In the tenth round we do only plain xor
-        masterText = aesStateXor(masterText, keyHex);
+      //re-order steps
+      masterText = aesNibbleSub(masterText);
+      //System.out.println("after nibblesub = " + MatrixToString(masterText));
+
+      masterText = aesShiftRow(masterText);
+      //System.out.println("after shiftrow = " + MatrixToString(masterText));
+
+      if (round < 10) {
+        masterText = aesMixColumn(masterText);
+        //System.out.println("after mixcol = " + MatrixToString(masterText));
+      }
+
+      //flip again, fixed xor
+      keyHex = rowtocol(keyHex);
+      masterText = aesStateXor(masterText, keyHex);
+      //System.out.println("after xor = " + MatrixToString(masterText));
     }
     // System.out.println("The Cipher Text is");
     for (int cols = 0; cols < 4; cols++) {
       for (int row = 0; row < 4; row++) {
         outValue = outValue.append(masterText[row][cols]);
-        // System.out.print(masterText[row][cols]+ "\t");
       }
-
     }
-    //System.out.println();
-    // Aesdecipher.processInput(outValue, inputkey, size_basket);
     return outValue.toString();
-
   }
-
-  /////
 
   /**
    * This method takes two input strings which are hexadecimal values and
