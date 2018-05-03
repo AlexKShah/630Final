@@ -5,57 +5,26 @@
  * the cipher
  */
 
-/*
-TODO
-processinput(): String
-->
-
-generateWMatrix(
-  col_valueforInput = 8 (rows),
-  column size = 60 (cols),
-  rounds = 15
-): String
-->
-
-generateCipher(
-  inHex, user provided key
-  masterText_encrypt, user plaintext
-  column_size = 60 (cols)
-  col_valueforInput = 8 (rows),
-  rounds = 15
-): String
- */
-
 public class Aescipher {
 
-  // masterKey array is declared to save the key user gives
   public static String[][] inHex;
-  public static String[][] masterText_encrypt;
-  // keyMatrixW array is declared to save the key's which will be generated
-  public static String[][] W;
-  static String[][] GaloisMatrix = {{"02", "03", "01", "01"}, {"01", "02", "03", "01"},
-      {"01", "01", "02", "03"}, {"03", "01", "01", "02"}};
+  public static String[][] plaintext;
+  public static String[][] wMatrix;
 
-  /**
-   * This method accepts user given key and saves it into a 4*4 matrix. Once
-   * the input is processed generateWMatrix() method is called.
-   *
-   * @param inputKey : Input key
-   */
   public static String processInput(String plainText, String inputKey, int[] size_basket, String verbose) {
     String cipherFinal = "";
     int i = 0;
     int j = 0;
-    int numRows;
-    int numCols;
-    int numRounds;
-    numRows = size_basket[0];
-    numCols = size_basket[1];
-    numRounds = size_basket[2];
-    W = new String[4][numCols];
-    inHex = new String[4][numRows];
-    masterText_encrypt = new String[4][4];
-    for (int column = 0; column < numRows; column++) {
+    int rowSize;
+    int columnSize;
+    int rounds;
+    rowSize = size_basket[0];
+    columnSize = size_basket[1];
+    rounds = size_basket[2];
+    wMatrix = new String[4][columnSize];
+    inHex = new String[4][rowSize];
+    plaintext = new String[4][4];
+    for (int column = 0; column < rowSize; column++) {
       for (int row = 0; row < 4; row = row + 1) {
         inHex[row][column] = inputKey.substring(i, i + 2);
         i = i + 2;
@@ -64,35 +33,130 @@ public class Aescipher {
 
     for (int column = 0; column < 4; column++) {
       for (int row = 0; row < 4; row = row + 1) {
-        masterText_encrypt[row][column] = plainText.substring(j, j + 2);
+        plaintext[row][column] = plainText.substring(j, j + 2);
         j = j + 2;
       }
     }
+
     if (verbose.equals("1")) {
       System.out.println("Text to be encrypted after padding is");
       System.out.println(plainText);
     }
-    cipherFinal = generateWMatrix(numRows, numCols, numRounds);
-    //cipherFinal = newGenerateWMatrix(numRows, numCols, numRounds);
 
+    generateWMatrix(rowSize, columnSize, rounds);
+    cipherFinal = generateCipher(inHex, plaintext, columnSize, rowSize, rounds);
     return cipherFinal;
   }
 
-  public static String generateCipher(String[][] masterKey, String[][] masterText, int column_size, int row_size,
-                                      int rounds) {
+  public static String MatrixToString(String[][] matrix) {
+    String ctxt = "";
+    for (int row = 0; row < 4; row++) {
+      ctxt += matrix[row][0] + " ";
+      ctxt += matrix[row][1] + " ";
+      ctxt += matrix[row][2] + " ";
+      ctxt += matrix[row][3] + " ";
+    }
+    return ctxt.toUpperCase();
+  }
 
+  public static String[][] rowtocol(String[][] matrix) {
+    String[][] tmp = new String[matrix.length][matrix.length];
+    for (int i = 0; i < matrix.length; i++) {
+      for (int j = 0; j < matrix.length; j++) {
+        //transpose
+        tmp[i][j] = matrix[j][i];
+      }
+    }
+    return tmp;
+  }
+
+  public static void generateWMatrix(int rowSize, int columnSize, int rounds) {
+
+    int roundCounter = 0;
+    String cipherW = "";
+    for (int row = 0; row < 4; row = row + 1) {
+      for (int column = 0; column < rowSize; column++) {
+        wMatrix[row][column] = inHex[row][column];
+      }
+    }
+
+    // Processing the rest keys for keyMatrixW , by taking an intermediate
+    // matrix wNewMatrix for processing purpose
+    String[][] wNewMatrix = null;
+    for (int column = rowSize; column < columnSize; column++) {
+      /**
+       * if the column number is not a multiple of 4 the following steps
+       * are to be implemented
+       */
+
+      if (column % rowSize != 0 && rowSize == 8) {
+        if (column % 4 == 0) {
+          for (int row = 0; row < 4; row++) {
+            wMatrix[row][column] = aesSbox(wMatrix[row][column - 1]);
+            wMatrix[row][column] = exclusiveOr(
+                wMatrix[row][column - rowSize], wMatrix[row][column]);
+
+          }
+        } else {
+          for (int row = 0; row < 4; row++) {
+
+            wMatrix[row][column] = exclusiveOr(
+                wMatrix[row][column - rowSize],
+                wMatrix[row][column - 1]);
+          }
+        }
+      } else if (column % rowSize != 0 && rowSize != 8) {
+        for (int row = 0; row < 4; row++) {
+
+          wMatrix[row][column] = exclusiveOr(wMatrix[row][column - rowSize],
+              wMatrix[row][column - 1]);
+        }
+
+      } else if (column % rowSize == 0) {
+
+        // If its a multiple of 4 the following steps will be
+        // implemented
+        wNewMatrix = new String[1][4];
+        // Inserting values and shifting cells in the intermediate
+        // matrix
+        wNewMatrix[0][0] = wMatrix[1][column - 1];
+        wNewMatrix[0][1] = wMatrix[2][column - 1];
+        wNewMatrix[0][2] = wMatrix[3][column - 1];
+        wNewMatrix[0][3] = wMatrix[0][column - 1];
+        // Once the shifting is done we do the s-box transformation
+        for (int i = 0; i < 1; i++) {
+          for (int j = 0; j < 4; j++) {
+            wNewMatrix[i][j] = aesSbox(wNewMatrix[i][j]);
+          }
+        }
+        int r = column / rowSize;
+        // Performing XOR of the R_CON value and new matrix value
+        wNewMatrix[0][0] = exclusiveOr(aesRcon(r), wNewMatrix[0][0]);
+        // Final computation of recursively XOR the values
+        for (int row = 0; row < 4; row++) {
+          wMatrix[row][column] = exclusiveOr(wMatrix[row][column - rowSize],
+              wNewMatrix[0][row]);
+        }
+      }
+    }
+  }
+
+
+  public static String generateCipher(String[][] masterKey, String[][] masterText, int columnSize, int rowSize,
+                                      int rounds) {
 
     String[][] keyHex = new String[4][4];
     StringBuilder outValue = new StringBuilder();
     int WCol = 0;
     int roundCounter = 0;
-    while (WCol < column_size) {
+    while (WCol < columnSize) {
       for (int cols = 0; cols < 4; cols++, WCol++) {
         for (int row = 0; row < 4; row++) {
-          keyHex[row][cols] = W[row][WCol];
+          keyHex[row][cols] = wMatrix[row][WCol];
         }
       }
-      System.out.println("key hex = " + MatrixToString(keyHex));
+      keyHex = rowtocol(keyHex);
+      System.out.println(MatrixToString(keyHex));
 
       if (roundCounter != (rounds - 1)) {
         masterText = aesStateXor(masterText, keyHex);
@@ -123,192 +187,8 @@ public class Aescipher {
     return outValue.toString();
 
   }
-  //from decipher
-  public static String generateWMatrix(int rowSize, int columnSize, int rounds) {
-    String cipherW = "";
-    for (int row = 0; row < 4; row = row + 1) {
-      for (int column = 0; column < rowSize; column++) {
-        W[row][column] = inHex[row][column];
-      }
-    }
-    /**
-     * generating remaining elements in array to fill 40 columns
-     */
-    for (int column = rowSize; column < columnSize; column++) {
-      /**
-       * if colum is multiple of given value, it goes to for loop for
-       * X-or
-       */
-      if (column % rowSize != 0) {
-        if (column % 4 == 0 && rowSize == 8) {
-          for (int row = 0; row < 4; row++) {
-            W[row][column] = aesSbox(W[row][column - 1]);
-            W[row][column] = exclusiveOr(W[row][column], W[row][column - rowSize]);
-          }
-        } else
-          for (int row = 0; row < 4; row++) {
 
-            W[row][column] = exclusiveOr(W[row][column - rowSize],
-                W[row][column - 1]);
-          }
-      } else {
-        /**
-         * creating a new matrix for storing elements
-         */
-        String[][] wNew = new String[1][4];
-        // Shifting the columns
-        wNew[0][0] = W[1][column - 1];
-        wNew[0][1] = W[2][column - 1];
-        wNew[0][2] = W[3][column - 1];
-        wNew[0][3] = W[0][column - 1];
-        // aesSbox method is called for getting S-box values for
-        // corresponding elemetns
-        for (int i = 0; i < 4; i++) {
-          wNew[0][i] = aesSbox(wNew[0][i]);
-        }
-        int r = column / rowSize;
-        String rconVal = aesRcon(r);
-        wNew[0][0] = exclusiveOr(wNew[0][0], rconVal);
-        for (int row = 0; row < 4; row++) {
-          W[row][column] = exclusiveOr(W[row][column - rowSize], wNew[0][row]);
-        }
-
-      }
-    }
-    cipherW = generateCipher(inHex, masterText_encrypt, columnSize, rowSize, rounds);
-    return cipherW;
-  }
-  //orig
-//  public static String generateWMatrix(int col_valueforInput, int column_size, int rounds) {
-//
-//    int roundCounter = 0;
-//    String cipherW = "";
-//    for (int row = 0; row < 4; row = row + 1) {
-//      for (int column = 0; column < col_valueforInput; column++) {
-//        W[row][column] = inHex[row][column];
-//      }
-//    }
-//
-//    // Processing the rest keys for keyMatrixW , by taking an intermediate
-//    // matrix wNewMatrix for processing purpose
-//    String[][] wNewMatrix = null;
-//    for (int column = col_valueforInput; column < column_size; column++) {
-//      /**
-//       * if the column number is not a multiple of 4 the following steps
-//       * are to be implemented
-//       */
-//
-//      if (column % col_valueforInput != 0 && col_valueforInput == 8) {
-//        if (column % 4 == 0) {
-//          for (int row = 0; row < 4; row++) {
-//            W[row][column] = aesSbox(W[row][column - 1]);
-//            W[row][column] = exclusiveOr(
-//                W[row][column - col_valueforInput], W[row][column]);
-//
-//          }
-//        } else {
-//          for (int row = 0; row < 4; row++) {
-//
-//            W[row][column] = exclusiveOr(
-//                W[row][column - col_valueforInput],
-//                W[row][column - 1]);
-//          }
-//        }
-//      } else if (column % col_valueforInput != 0 && col_valueforInput != 8) {
-//        for (int row = 0; row < 4; row++) {
-//
-//          W[row][column] = exclusiveOr(W[row][column - col_valueforInput],
-//              W[row][column - 1]);
-//        }
-//
-//      } else if (column % col_valueforInput == 0) {
-//
-//        // If its a multiple of 4 the following steps will be
-//        // implemented
-//        wNewMatrix = new String[1][4];
-//        // Inserting values and shifting cells in the intermediate
-//        // matrix
-//        wNewMatrix[0][0] = W[1][column - 1];
-//        wNewMatrix[0][1] = W[2][column - 1];
-//        wNewMatrix[0][2] = W[3][column - 1];
-//        wNewMatrix[0][3] = W[0][column - 1];
-//        // Once the shifting is done we do the s-box transformation
-//        for (int i = 0; i < 1; i++) {
-//          for (int j = 0; j < 4; j++) {
-//            wNewMatrix[i][j] = aesSbox(wNewMatrix[i][j]);
-//          }
-//        }
-//        int r = column / col_valueforInput;
-//        // Performing XOR of the R_CON value and new matrix value
-//        wNewMatrix[0][0] = exclusiveOr(aesRcon(r), wNewMatrix[0][0]);
-//        // Final computation of recursively XOR the values
-//        for (int row = 0; row < 4; row++) {
-//          W[row][column] = exclusiveOr(W[row][column - col_valueforInput],
-//              wNewMatrix[0][row]);
-//        }
-//      }
-//    }
-//    cipherW = generateCipher(inHex, masterText_encrypt, column_size, col_valueforInput, rounds);
-//    return cipherW;
-//  }
-//  //REVISED
-//  public static String generateWMatrix(int numRows, int numCols, int numRounds) {
-//    //copy in key hex
-//    for (int i = 0; i < 4; i++) {
-//      W[i][0] = inHex[i][0];
-//      W[i][1] = inHex[i][1];
-//      W[i][2] = inHex[i][2];
-//      W[i][3] = inHex[i][3];
-//    }
-//
-//    for (int column = 4; column < numCols; column++) {
-//      /**
-//       * if the column number is not a multiple of 4 the following steps
-//       * are to be implemented
-//       */
-//
-//      //column is divisible by 4
-//      if (column % 4 != 0) {
-//        //column not divisible by 4
-//        // 3a: w(j) = w(j − 4) XOR w(j − 1)
-//        for (int row = 0; row < 4; row++) {
-//          W[row][column] = exclusiveOr(W[row][column - 4], W[row][column - 1]);
-//        }
-//
-//      } else {
-//        // 3b
-//        // wnew = [ (Rcon(i) XOR Sbox(w1,j−1)), Sbox(w2,j−1), Sbox(w3,j−1), Sbox(w0,j−1) ]
-//        // w(j) = w(j − 4) XOR wnew
-//        // wnew = [ (Rcon(i) XOR Sbox(w1,j−1)), Sbox(w2,j−1), Sbox(w3,j−1), Sbox(w0,j−1) ]
-//        String[] wnew = new String[4];
-//        int r = column / numRows;
-//        String rconValue = aesRcon(r);
-//        wnew[0] = exclusiveOr(rconValue, aesSbox(W[1][column - 1]));
-//        wnew[1] = aesSbox(W[2][column - 1]);
-//        wnew[2] = aesSbox(W[3][column - 1]);
-//        wnew[3] = aesSbox(W[0][column - 1]);
-//
-//        // w(j) = w(j − 4) XOR wnew
-//        for (int row = 0; row < 4; row++) {
-//          W[row][column] = exclusiveOr(W[row][column - 4], wnew[row]);
-//        }
-//      }
-//    }
-//    String cipherW = "";
-//    cipherW = generateCipher(inHex, masterText_encrypt, numCols, numRows, numRounds);
-//    return cipherW;
-//  }
-
-  public static String MatrixToString(String[][] matrix) {
-    String ctxt = "";
-    for (int row = 0; row < 4; row++) {
-      ctxt += matrix[row][0];
-      ctxt += matrix[row][1];
-      ctxt += matrix[row][2];
-      ctxt += matrix[row][3];
-    }
-    return ctxt.toUpperCase();
-  }
+  /////
 
   /**
    * This method takes two input strings which are hexadecimal values and
@@ -525,4 +405,7 @@ public class Aescipher {
       {"08", "10", "20", "40", "80", "1B", "36", "6C", "D8", "AB", "4D", "9A", "2F", "5E", "BC", "63"},
       {"C6", "97", "35", "6A", "D4", "B3", "7D", "FA", "EF", "C5", "91", "39", "72", "E4", "D3", "BD"},
       {"61", "C2", "9F", "25", "4A", "94", "33", "66", "CC", "83", "1D", "3A", "74", "E8", "CB", "8D"}};
+
+  static String[][] GaloisMatrix = {{"02", "03", "01", "01"}, {"01", "02", "03", "01"},
+      {"01", "01", "02", "03"}, {"03", "01", "01", "02"}};
 }

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="04905c10-68d7-48ab-9436-36cc8360283c" name="Default" comment="">
+    <list default="true" id="04905c10-68d7-48ab-9436-36cc8360283c" name="Default" comment="added read only original file as text file, going to get rid of my tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Aescipher/Aescipher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aescipher/Aescipher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reference/AlexAESCipher.java" beforeDir="false" afterPath="$PROJECT_DIR$/reference/AlexAESCipher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aescipher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aescipher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aesdecipher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aesdecipher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/testCase.0" beforeDir="false" afterPath="$PROJECT_DIR$/src/testCase.0" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,45 +15,41 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DockManager">
-    <window id="2">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="AlexAESCipher.java" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/reference/AlexAESCipher.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="352">
-                    <caret line="16" column="26" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="16" selection-end-column="26" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="Aesdecipher.java" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/Aesdecipher.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="220">
-                    <caret line="226" column="6" selection-start-line="226" selection-start-column="6" selection-end-line="226" selection-end-column="6" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="Aescipher.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Aescipher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="126" column="2" selection-start-line="126" selection-start-column="2" selection-end-line="126" selection-end-column="2" />
+            <state relative-caret-position="334">
+              <caret line="72" column="34" selection-start-line="72" selection-start-column="34" selection-end-line="72" selection-end-column="34" />
               <folding>
-                <element signature="e#11182#11183#0" expanded="true" />
-                <element signature="e#11241#11242#0" expanded="true" />
+                <element signature="docComment;method#exclusiveOr#0;class#Aescipher#0" />
+                <element signature="docComment;method#aesSbox#0;class#Aescipher#0" />
+                <element signature="method#aesSbox#0;class#Aescipher#0" />
+                <element signature="docComment;method#aesRcon#0;class#Aescipher#0" />
+                <element signature="method#aesRcon#0;class#Aescipher#0" />
+                <element signature="method#aesStateXor#0;class#Aescipher#0" />
+                <element signature="docComment;method#aesNibbleSub#0;class#Aescipher#0" />
+                <element signature="method#aesNibbleSub#0;class#Aescipher#0" />
+                <element signature="docComment;method#aesShiftRow#0;class#Aescipher#0" />
+                <element signature="method#aesShiftRow#0;class#Aescipher#0" />
+                <element signature="method#aesMixColumn#0;class#Aescipher#0" />
+                <element signature="docComment;method#multiply3#0;class#Aescipher#0" />
+                <element signature="e#10189#10190#0" expanded="true" />
+                <element signature="e#10248#10249#0" expanded="true" />
+                <element signature="docComment;method#multiply2#0;class#Aescipher#0" />
+                <element signature="method#multiply2#0;class#Aescipher#0" />
+                <element signature="docComment;field#S_BOX#0;class#Aescipher#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Aescipher-buggy.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Aescipher-buggy.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="152" column="2" selection-start-line="152" selection-start-column="2" selection-end-line="223" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -62,7 +57,7 @@
       <file leaf-file-name="Driver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
+            <state relative-caret-position="946">
               <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
             </state>
           </provider>
@@ -71,8 +66,17 @@
       <file leaf-file-name="testCase.0" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/testCase.0">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" column="22" selection-end-line="1" selection-end-column="22" />
+            <state relative-caret-position="66">
+              <caret line="3" selection-start-line="3" selection-end-line="4" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AlexAESCipher.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reference/AlexAESCipher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="145" column="31" lean-forward="true" selection-start-line="145" selection-start-column="4" selection-end-line="145" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -86,17 +90,23 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>tmp</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/testCase.0" />
         <option value="$PROJECT_DIR$/src/Driver.java" />
-        <option value="$PROJECT_DIR$/reference/AlexAESCipher.java" />
-        <option value="$PROJECT_DIR$/src/Aescipher.java" />
         <option value="$PROJECT_DIR$/src/Aesdecipher.java" />
+        <option value="$PROJECT_DIR$/reference/AlexAESCipher.java" />
+        <option value="$PROJECT_DIR$/src/Aescipher-buggy.java" />
+        <option value="$PROJECT_DIR$/src/testCase.0" />
+        <option value="$PROJECT_DIR$/src/Aescipher.java" />
       </list>
     </option>
   </component>
@@ -127,7 +137,7 @@
             <path>
               <item name="Aescipher" type="b2602c69:ProjectViewProjectNode" />
               <item name="Aescipher" type="462c0819:PsiDirectoryNode" />
-              <item name="reference" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -163,7 +173,7 @@
     <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Driver" />
       <module name="Aescipher" />
-      <option name="PROGRAM_PARAMETERS" value="0304050001020607080415161718191a1b1c1d1e90a0b0c0d0e311f0f1011121 cddeeff001122335544667 1" />
+      <option name="PROGRAM_PARAMETERS" value="5468617473206D79204B756E67204675 54776F204F6E65204E696E652054776F 1" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -223,7 +233,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1525361429321</updated>
-      <workItem from="1525361433280" duration="6056000" />
+      <workItem from="1525361433280" duration="9194000" />
     </task>
     <task id="LOCAL-00001" summary="add reference files for alex aes and matt's">
       <created>1525362249134</created>
@@ -253,11 +263,32 @@
       <option name="project" value="LOCAL" />
       <updated>1525366208853</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="playing around with decipher's method">
+      <created>1525368804363</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1525368804363</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added read only original file">
+      <created>1525368874128</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1525368874128</updated>
+    </task>
+    <task id="LOCAL-00007" summary="added read only original file as text file, going to get rid of my tests">
+      <created>1525369240602</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1525369240602</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6056000" />
+    <option name="totallyTimeSpent" value="9194000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="794" y="0" width="1965" height="1128" extended-state="0" />
@@ -277,7 +308,7 @@
       <window_info anchor="bottom" id="Terminal" weight="0.2922776" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.12436364" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.12403896" />
       <window_info anchor="right" id="Database" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32906404" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -299,7 +330,7 @@
       <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.32906404" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="5" />
-      <window_info content_ui="combo" id="Project" order="5" weight="0.12436364" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.12403896" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info anchor="bottom" id="TODO" order="11" />
@@ -334,16 +365,17 @@
     <MESSAGE value="add Mike's aes" />
     <MESSAGE value="todo's, redo generateWMatrix?" />
     <MESSAGE value="rename stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="rename stuff" />
+    <MESSAGE value="playing around with decipher's method" />
+    <MESSAGE value="added read only original file" />
+    <MESSAGE value="added read only original file as text file, going to get rid of my tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="added read only original file as text file, going to get rid of my tests" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/testCase.0">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="22" selection-end-line="1" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reference/MattAESCipher.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -357,35 +389,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Driver.java">
+    <entry file="file://$PROJECT_DIR$/src/Aescipher-buggy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reference/AlexAESCipher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="26" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="16" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Aescipher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="126" column="2" selection-start-line="126" selection-start-column="2" selection-end-line="126" selection-end-column="2" />
+        <state relative-caret-position="176">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
           <folding>
-            <element signature="e#11182#11183#0" expanded="true" />
-            <element signature="e#11241#11242#0" expanded="true" />
+            <element signature="e#14356#14357#0" expanded="true" />
+            <element signature="e#14415#14416#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Aesdecipher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
+        <state relative-caret-position="-1166">
           <caret line="226" column="6" selection-start-line="226" selection-start-column="6" selection-end-line="226" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="946">
+          <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/testCase.0">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" selection-start-line="3" selection-end-line="4" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reference/AlexAESCipher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="145" column="31" lean-forward="true" selection-start-line="145" selection-start-column="4" selection-end-line="145" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Aescipher-buggy.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="152" column="2" selection-start-line="152" selection-start-column="2" selection-end-line="223" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Aescipher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="72" column="34" selection-start-line="72" selection-start-column="34" selection-end-line="72" selection-end-column="34" />
+          <folding>
+            <element signature="docComment;method#exclusiveOr#0;class#Aescipher#0" />
+            <element signature="docComment;method#aesSbox#0;class#Aescipher#0" />
+            <element signature="method#aesSbox#0;class#Aescipher#0" />
+            <element signature="docComment;method#aesRcon#0;class#Aescipher#0" />
+            <element signature="method#aesRcon#0;class#Aescipher#0" />
+            <element signature="method#aesStateXor#0;class#Aescipher#0" />
+            <element signature="docComment;method#aesNibbleSub#0;class#Aescipher#0" />
+            <element signature="method#aesNibbleSub#0;class#Aescipher#0" />
+            <element signature="docComment;method#aesShiftRow#0;class#Aescipher#0" />
+            <element signature="method#aesShiftRow#0;class#Aescipher#0" />
+            <element signature="method#aesMixColumn#0;class#Aescipher#0" />
+            <element signature="docComment;method#multiply3#0;class#Aescipher#0" />
+            <element signature="e#10189#10190#0" expanded="true" />
+            <element signature="e#10248#10249#0" expanded="true" />
+            <element signature="docComment;method#multiply2#0;class#Aescipher#0" />
+            <element signature="method#multiply2#0;class#Aescipher#0" />
+            <element signature="docComment;field#S_BOX#0;class#Aescipher#0" />
+          </folding>
         </state>
       </provider>
     </entry>
