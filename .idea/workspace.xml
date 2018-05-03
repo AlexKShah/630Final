@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="04905c10-68d7-48ab-9436-36cc8360283c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Aescipher/Aescipher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aescipher/Aescipher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aescipher/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aescipher/Driver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reference/AlexAESCipher.java" beforeDir="false" afterPath="$PROJECT_DIR$/reference/AlexAESCipher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aescipher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aescipher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Driver.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,27 +16,17 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DockManager">
-    <window id="1">
+    <window id="2">
       <content type="file-editors">
         <state>
           <leaf>
             <file leaf-file-name="AlexAESCipher.java" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/reference/AlexAESCipher.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="594">
-                    <caret line="276" column="5" lean-forward="true" selection-start-line="276" selection-start-column="5" selection-end-line="276" selection-end-column="5" />
+                  <state relative-caret-position="264">
+                    <caret line="234" column="46" selection-start-line="234" selection-start-column="41" selection-end-line="234" selection-end-column="46" />
                   </state>
                 </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="MattAESCipher.java" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/reference/MattAESCipher.java">
-                <provider selected="true" editor-type-id="text-editor" />
-              </entry>
-            </file>
-            <file leaf-file-name="MikeAESCipher.java" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/reference/MikeAESCipher.java">
-                <provider selected="true" editor-type-id="text-editor" />
               </entry>
             </file>
           </leaf>
@@ -49,8 +39,8 @@
       <file leaf-file-name="Aescipher.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Aescipher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+            <state relative-caret-position="-1351">
+              <caret line="44" column="62" selection-start-line="44" selection-start-column="62" selection-end-line="44" selection-end-column="62" />
               <folding>
                 <element signature="e#11182#11183#0" expanded="true" />
                 <element signature="e#11241#11242#0" expanded="true" />
@@ -104,6 +94,7 @@
         <option value="$PROJECT_DIR$/src/testCase.0" />
         <option value="$PROJECT_DIR$/src/Aesdecipher.java" />
         <option value="$PROJECT_DIR$/src/Driver.java" />
+        <option value="$PROJECT_DIR$/reference/AlexAESCipher.java" />
         <option value="$PROJECT_DIR$/src/Aescipher.java" />
       </list>
     </option>
@@ -115,8 +106,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="width" value="1737" />
+    <option name="x" value="992" />
+    <option name="width" value="2457" />
     <option name="height" value="1410" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -231,7 +222,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1525361429321</updated>
-      <workItem from="1525361433280" duration="2630000" />
+      <workItem from="1525361433280" duration="3328000" />
     </task>
     <task id="LOCAL-00001" summary="add reference files for alex aes and matt's">
       <created>1525362249134</created>
@@ -247,14 +238,21 @@
       <option name="project" value="LOCAL" />
       <updated>1525362394823</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="todo's, redo generateWMatrix?">
+      <created>1525364091562</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1525364091562</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2630000" />
+    <option name="totallyTimeSpent" value="3328000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="1389" height="1128" extended-state="0" />
+    <frame x="794" y="0" width="1965" height="1128" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
@@ -267,19 +265,19 @@
       <window_info anchor="right" id="Maven Projects" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32906404" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32906404" />
       <window_info anchor="bottom" id="Terminal" weight="0.2922776" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.12436364" />
       <window_info anchor="right" id="Database" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32906404" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" />
       <window_info anchor="right" id="Theme Preview" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -290,10 +288,10 @@
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.32906404" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.32906404" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="5" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.12436364" />
+      <window_info content_ui="combo" id="Project" order="5" weight="0.12436364" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info anchor="bottom" id="TODO" order="11" />
@@ -312,7 +310,7 @@
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info id="Capture Tool" order="3" />
       <window_info anchor="bottom" id="Find" order="6" />
-      <window_info anchor="bottom" id="Messages" order="4" />
+      <window_info anchor="bottom" id="Messages" order="4" weight="0.32906404" />
       <window_info anchor="right" id="Maven Projects" order="5" />
       <window_info id="Favorites" order="4" side_tool="true" />
     </layout-to-restore>
@@ -326,7 +324,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add reference files for alex aes and matt's" />
     <MESSAGE value="add Mike's aes" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Mike's aes" />
+    <MESSAGE value="todo's, redo generateWMatrix?" />
+    <option name="LAST_COMMIT_MESSAGE" value="todo's, redo generateWMatrix?" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Aesdecipher.java">
@@ -356,13 +355,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reference/AlexAESCipher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="276" column="5" lean-forward="true" selection-start-line="276" selection-start-column="5" selection-end-line="276" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
@@ -370,10 +362,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/reference/AlexAESCipher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="234" column="46" selection-start-line="234" selection-start-column="41" selection-end-line="234" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Aescipher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+        <state relative-caret-position="-1351">
+          <caret line="44" column="62" selection-start-line="44" selection-start-column="62" selection-end-line="44" selection-end-column="62" />
           <folding>
             <element signature="e#11182#11183#0" expanded="true" />
             <element signature="e#11241#11242#0" expanded="true" />

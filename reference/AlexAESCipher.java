@@ -259,7 +259,6 @@ public class AESCipher {
         // 3b
         // wnew = [ (Rcon(i) XOR Sbox(w1,j−1)), Sbox(w2,j−1), Sbox(w3,j−1), Sbox(w0,j−1) ]
         // w(j) = w(j − 4) XOR wnew
-
         // wnew = [ (Rcon(i) XOR Sbox(w1,j−1)), Sbox(w2,j−1), Sbox(w3,j−1), Sbox(w0,j−1) ]
         String[] wnew = new String[4];
         String rconValue = aesRcon(j);
