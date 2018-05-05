@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="04905c10-68d7-48ab-9436-36cc8360283c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Aescipher/Aescipher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aescipher/Aescipher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Aescipher/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aescipher/Driver.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aescipher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aescipher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Driver.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,12 +18,8 @@
       <file leaf-file-name="Aescipher.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Aescipher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="188" column="4" selection-start-line="188" selection-start-column="4" selection-end-line="188" selection-end-column="4" />
-              <folding>
-                <element signature="e#10209#10210#0" expanded="true" />
-                <element signature="e#10268#10269#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="682">
+              <caret line="172" column="29" lean-forward="true" selection-start-line="172" selection-start-column="29" selection-end-line="172" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -34,17 +27,27 @@
       <file leaf-file-name="AlexAESCipher.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reference/AlexAESCipher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="73" column="7" lean-forward="true" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+            <state relative-caret-position="1606">
+              <caret line="73" column="7" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Aescipher-buggy.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Aescipher-buggy.txt">
+      <file leaf-file-name="MattAESCipher.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reference/MattAESCipher.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="MikeAESCipher.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reference/MikeAESCipher.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="Aesdecipher.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Aesdecipher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
+            <state relative-caret-position="4972">
+              <caret line="226" column="6" selection-start-line="226" selection-start-column="6" selection-end-line="226" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -52,7 +55,7 @@
       <file leaf-file-name="Driver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
+            <state relative-caret-position="1584">
               <caret line="72" column="93" selection-start-line="72" selection-start-column="79" selection-end-line="72" selection-end-column="93" />
             </state>
           </provider>
@@ -61,8 +64,17 @@
       <file leaf-file-name="testCase.0" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/testCase.0">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="64" selection-end-column="64" />
+            <state relative-caret-position="22">
+              <caret line="1" column="22" lean-forward="true" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Aescipher-buggy.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Aescipher-buggy.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2838">
+              <caret line="129" selection-start-line="129" selection-end-line="129" />
             </state>
           </provider>
         </entry>
@@ -103,9 +115,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="992" />
-    <option name="width" value="2457" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="991" />
+    <option name="width" value="2458" />
     <option name="height" value="1410" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -113,11 +125,37 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Aescipher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Aescipher" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Aescipher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Aescipher" type="462c0819:PsiDirectoryNode" />
+              <item name="reference" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Aescipher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Aescipher" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../679project_AlexShah" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -140,7 +178,7 @@
     <configuration name="Driver0" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Driver" />
       <module name="Aescipher" />
-      <option name="PROGRAM_PARAMETERS" value="0304050001020607080415161718191a1b1c1d1e90a0b0c0d0e311f0f1011121 cddeeff001122335544667 1" />
+      <option name="PROGRAM_PARAMETERS" value="0304050001020607080415161718191a1b1c1d1e90a0b0c0d0e311f0f1011121 CDDEEFF001122335544667 1" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     </configuration>
     <configuration name="Driver1" type="Application" factoryName="Application" temporary="true">
@@ -212,7 +250,10 @@
       <updated>1525361429321</updated>
       <workItem from="1525361433280" duration="9392000" />
       <workItem from="1525374223215" duration="2539000" />
-      <workItem from="1525377881913" duration="1090000" />
+      <workItem from="1525377881913" duration="1151000" />
+      <workItem from="1525379120347" duration="34000" />
+      <workItem from="1525456435665" duration="17000" />
+      <workItem from="1525544436850" duration="546000" />
     </task>
     <task id="LOCAL-00001" summary="add reference files for alex aes and matt's">
       <created>1525362249134</created>
@@ -277,14 +318,21 @@
       <option name="project" value="LOCAL" />
       <updated>1525376729795</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="still borked decrypt">
+      <created>1525378997667</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1525378997667</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13021000" />
+    <option name="totallyTimeSpent" value="13679000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="794" y="0" width="1965" height="1128" extended-state="0" />
+    <frame x="-8" y="-8" width="3456" height="1426" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -296,12 +344,12 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32906404" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3279939" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.2922776" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.12403896" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.08604651" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -321,10 +369,10 @@
       <window_info anchor="bottom" id="Find" order="1" weight="0.32906404" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32906404" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3279939" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.12403896" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.08604651" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -363,7 +411,8 @@
     <MESSAGE value="added read only original file as text file, going to get rid of my tests" />
     <MESSAGE value="keys are correct now, still wrong decrypt?" />
     <MESSAGE value="fixed code, runs for input.1 from lab 5, still says penalty, padding problem?" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed code, runs for input.1 from lab 5, still says penalty, padding problem?" />
+    <MESSAGE value="still borked decrypt" />
+    <option name="LAST_COMMIT_MESSAGE" value="still borked decrypt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -373,12 +422,113 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Aescipher.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5016">
+          <caret line="228" column="4" selection-start-line="228" selection-start-column="4" selection-end-line="228" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reference/AlexAESCipher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1606">
+          <caret line="73" column="7" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Aescipher-buggy.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2838">
+          <caret line="129" selection-start-line="129" selection-end-line="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1584">
+          <caret line="72" column="93" selection-start-line="72" selection-start-column="79" selection-end-line="72" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/testCase.0">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="64" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Aescipher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5016">
+          <caret line="228" column="4" lean-forward="true" selection-start-line="228" selection-start-column="4" selection-end-line="228" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reference/AlexAESCipher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1606">
+          <caret line="73" column="7" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Aescipher-buggy.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2838">
+          <caret line="129" selection-start-line="129" selection-end-line="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1584">
+          <caret line="72" column="93" selection-start-line="72" selection-start-column="79" selection-end-line="72" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/testCase.0">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="64" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Aescipher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4334">
+          <caret line="197" column="31" selection-start-line="197" selection-start-column="31" selection-end-line="197" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reference/AlexAESCipher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1606">
+          <caret line="73" column="7" lean-forward="true" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Aescipher-buggy.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2838">
+          <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1584">
+          <caret line="72" column="93" selection-start-line="72" selection-start-column="79" selection-end-line="72" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/testCase.0">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="64" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Aescipher.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3344">
           <caret line="152" column="12" selection-start-line="152" selection-start-column="6" selection-end-line="152" selection-end-column="12" />
-          <folding>
-            <element signature="e#10209#10210#0" expanded="true" />
-            <element signature="e#10268#10269#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -407,10 +557,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1716">
           <caret line="78" column="34" lean-forward="true" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
-          <folding>
-            <element signature="e#10209#10210#0" expanded="true" />
-            <element signature="e#10268#10269#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -450,49 +596,51 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Aescipher-buggy.java" />
-    <entry file="file://$PROJECT_DIR$/src/Aesdecipher.java">
+    <entry file="file://$PROJECT_DIR$/src/Aescipher-buggy.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1166">
-          <caret line="226" column="6" selection-start-line="226" selection-start-column="6" selection-end-line="226" selection-end-column="6" />
+        <state relative-caret-position="2838">
+          <caret line="129" selection-start-line="129" selection-end-line="129" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/testCase.0">
+    <entry file="file://$PROJECT_DIR$/reference/MattAESCipher.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reference/MikeAESCipher.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Aesdecipher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="64" selection-end-column="64" />
+        <state relative-caret-position="4972">
+          <caret line="226" column="6" selection-start-line="226" selection-start-column="6" selection-end-line="226" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
+        <state relative-caret-position="1584">
           <caret line="72" column="93" selection-start-line="72" selection-start-column="79" selection-end-line="72" selection-end-column="93" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Aescipher-buggy.txt">
+    <entry file="file://$PROJECT_DIR$/src/testCase.0">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
+        <state relative-caret-position="22">
+          <caret line="1" column="22" lean-forward="true" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/reference/AlexAESCipher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="73" column="7" lean-forward="true" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+        <state relative-caret-position="1606">
+          <caret line="73" column="7" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Aescipher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="188" column="4" selection-start-line="188" selection-start-column="4" selection-end-line="188" selection-end-column="4" />
-          <folding>
-            <element signature="e#10209#10210#0" expanded="true" />
-            <element signature="e#10268#10269#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="682">
+          <caret line="172" column="29" lean-forward="true" selection-start-line="172" selection-start-column="29" selection-end-line="172" selection-end-column="29" />
         </state>
       </provider>
     </entry>

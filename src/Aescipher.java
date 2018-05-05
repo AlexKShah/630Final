@@ -151,7 +151,7 @@ public class Aescipher {
     masterText = aesStateXor(masterText, masterKey);
 
     //System.out.println("round0 = " + MatrixToString(masterText));
-    for (int round = 1; round < 11; round++) {
+    for (int round = 1; round < rounds; round++) {
       for (int j = 0; j < 4; j++) {
         for (int k = 0; k < 4; k++) {
           keyHex[k][j] = wMatrix[k][(round * 4) + j];
@@ -170,7 +170,7 @@ public class Aescipher {
       masterText = aesShiftRow(masterText);
       //System.out.println("after shiftrow = " + MatrixToString(masterText));
 
-      if (round < 10) {
+      if (round < rounds-1) {
         masterText = aesMixColumn(masterText);
         //System.out.println("after mixcol = " + MatrixToString(masterText));
       }
