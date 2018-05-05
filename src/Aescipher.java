@@ -24,17 +24,15 @@ public class Aescipher {
     wMatrix = new String[4][columnSize];
     inHex = new String[4][rowSize];
     plaintext = new String[4][4];
+
     for (int column = 0; column < rowSize; column++) {
       for (int row = 0; row < 4; row = row + 1) {
         inHex[row][column] = inputKey.substring(i, i + 2);
+        if (column < 4) {
+          plaintext[row][column] = plainText.substring(j, j + 2);
+          j = j + 2;
+        }
         i = i + 2;
-      }
-    }
-
-    for (int column = 0; column < 4; column++) {
-      for (int row = 0; row < 4; row = row + 1) {
-        plaintext[row][column] = plainText.substring(j, j + 2);
-        j = j + 2;
       }
     }
 
@@ -46,17 +44,6 @@ public class Aescipher {
     generateWMatrix(rowSize, columnSize, rounds);
     cipherFinal = generateCipher(inHex, plaintext, columnSize, rowSize, rounds);
     return cipherFinal;
-  }
-
-  public static String MatrixToString(String[][] matrix) {
-    String ctxt = "";
-    for (int row = 0; row < 4; row++) {
-      ctxt += matrix[row][0] + " ";
-      ctxt += matrix[row][1] + " ";
-      ctxt += matrix[row][2] + " ";
-      ctxt += matrix[row][3] + " ";
-    }
-    return ctxt.toUpperCase();
   }
 
   public static String[][] rowtocol(String[][] matrix) {
@@ -74,10 +61,9 @@ public class Aescipher {
 
     int roundCounter = 0;
     String cipherW = "";
-    for (int row = 0; row < 4; row = row + 1) {
-      for (int column = 0; column < rowSize; column++) {
-        wMatrix[row][column] = inHex[row][column];
-      }
+
+    for (int i = 0; i < inHex.length; i++) {
+      System.arraycopy(inHex[i], 0, wMatrix[i], 0, inHex[i].length);
     }
 
     // Processing the rest keys for keyMatrixW , by taking an intermediate
@@ -89,6 +75,7 @@ public class Aescipher {
        * are to be implemented
        */
 
+      //speed up here
       if (column % rowSize != 0 && rowSize == 8) {
         if (column % 4 == 0) {
           for (int row = 0; row < 4; row++) {
@@ -99,7 +86,6 @@ public class Aescipher {
           }
         } else {
           for (int row = 0; row < 4; row++) {
-
             wMatrix[row][column] = exclusiveOr(
                 wMatrix[row][column - rowSize],
                 wMatrix[row][column - 1]);
@@ -150,7 +136,7 @@ public class Aescipher {
     //add round 0 xor
     masterText = aesStateXor(masterText, masterKey);
 
-    //System.out.println("round0 = " + MatrixToString(masterText));
+    //speed up here
     for (int round = 1; round < rounds; round++) {
       for (int j = 0; j < 4; j++) {
         for (int k = 0; k < 4; k++) {
@@ -160,25 +146,18 @@ public class Aescipher {
       //fixes keygen!
       keyHex = rowtocol(keyHex);
 
-      //System.out.println("round=" +round);
-      //System.out.println("keyhex="+MatrixToString(keyHex));
-
       //re-order steps
       masterText = aesNibbleSub(masterText);
-      //System.out.println("after nibblesub = " + MatrixToString(masterText));
 
       masterText = aesShiftRow(masterText);
-      //System.out.println("after shiftrow = " + MatrixToString(masterText));
 
-      if (round < rounds-1) {
+      if (round < rounds - 1) {
         masterText = aesMixColumn(masterText);
-        //System.out.println("after mixcol = " + MatrixToString(masterText));
       }
 
       //flip again, fixed xor
       keyHex = rowtocol(keyHex);
       masterText = aesStateXor(masterText, keyHex);
-      //System.out.println("after xor = " + MatrixToString(masterText));
     }
 
     for (int cols = 0; cols < 4; cols++) {
@@ -186,7 +165,6 @@ public class Aescipher {
         outValue = outValue.append(masterText[row][cols]);
       }
     }
-
     return outValue.toString();
   }
 
@@ -238,14 +216,14 @@ public class Aescipher {
 
   public static String[][] aesStateXor(String[][] sHex, String[][] keyHex) {
     String exclusiveOrArray[][] = new String[4][4];
+    //speed up here
+
     for (int i = 0; i < 4; i++) {
       for (int j = 0; j < 4; j++) {
         exclusiveOrArray[i][j] = exclusiveOr(sHex[i][j], keyHex[i][j]);
       }
     }
-
     return exclusiveOrArray;
-
   }
 
   /**
@@ -257,6 +235,7 @@ public class Aescipher {
    */
   public static String[][] aesNibbleSub(String[][] exclusive) {
     String sBoxValues[][] = new String[4][4];
+    //speed up here
     for (int i = 0; i < 4; i++) {
       for (int j = 0; j < 4; j++) {
         sBoxValues[i][j] = aesSbox(exclusive[i][j]);
@@ -274,6 +253,7 @@ public class Aescipher {
   public static String[][] aesShiftRow(String[][] sHex) {
     String[][] outStateHex = new String[4][4];
     int counter = 4;
+    //speed up here
     for (int i = 0; i < 4; i++) {
       for (int j = 0; j < 4; j++) {
         if (i > 0)
@@ -290,7 +270,7 @@ public class Aescipher {
   protected static String[][] aesMixColumn(String[][] inStateHex) {
     String sum;
     String Product[][] = new String[4][4];
-
+//speed up here
     for (int i = 0; i < 4; i++) {
       for (int j = 0; j < 4; j++) {
         sum = "0";
