@@ -1,3 +1,10 @@
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.*;
+import java.util.stream.*;
+
+
+
 /**
  * File: Aescipher.java
  * <p>
@@ -75,31 +82,26 @@ public class Aescipher {
        * are to be implemented
        */
 
-      //speed up here
-      if (column % rowSize != 0 && rowSize == 8) {
-        if (column % 4 == 0) {
-          for (int row = 0; row < 4; row++) {
+
+      for (int row =0; row<4;row++) {
+        //speed up here
+        if (column % rowSize != 0 && rowSize == 8) {
+          if (column % 4 == 0) {
             wMatrix[row][column] = aesSbox(wMatrix[row][column - 1]);
             wMatrix[row][column] = exclusiveOr(
                 wMatrix[row][column - rowSize], wMatrix[row][column]);
-
-          }
-        } else {
-          for (int row = 0; row < 4; row++) {
+          } else {
             wMatrix[row][column] = exclusiveOr(
                 wMatrix[row][column - rowSize],
                 wMatrix[row][column - 1]);
           }
-        }
-      } else if (column % rowSize != 0 && rowSize != 8) {
-        for (int row = 0; row < 4; row++) {
+        } else if (column % rowSize != 0 && rowSize != 8) {
 
           wMatrix[row][column] = exclusiveOr(wMatrix[row][column - rowSize],
               wMatrix[row][column - 1]);
         }
-
-      } else if (column % rowSize == 0) {
-
+      }
+       if (column % rowSize == 0) {
         // If its a multiple of 4 the following steps will be
         // implemented
         wNewMatrix = new String[1][4];
@@ -126,7 +128,6 @@ public class Aescipher {
       }
     }
   }
-
 
   public static String generateCipher(String[][] masterKey, String[][] masterText, int columnSize, int rowSize,
                                       int rounds) {
