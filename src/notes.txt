@@ -1,0 +1,126 @@
+Notes:
+Run1:
+
+Time0 Variable Assignment: 11538520
+Time2 Aescipher.processInput2: 64131850 // longest
+Time3 Aesdecipher.processinput3: 26816068
+Time4 final stuff: 16166
+
+Further Exploration:
+
+/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/bin/java "-javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=53141:/Applications/IntelliJ IDEA.app/Contents/bin" -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/lib/tools.jar:/Users/Michael/Documents/University/Current_Semester/mscs679/630Final/out/production/Aescipher Driver 0304050001020607080415161718191a1b1c1d1e90a0b0c0d0e311f0f1011121 CDDEEFF001122335544667 1
+objc[48681]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/bin/java (0x109b604c0) and /Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/libinstrument.dylib (0x10ab814e0). One of the two will be used. Which one is undefined.
+========Time0 Driver Variable Assignment: 168561
++++++++++++++++++Time0 Aescipher (1st substring 2d for loop): 77152
++++++++++++++++++Time1 Aescipher (2nd substring 2d for loop): 18330
+Text to be encrypted after padding is
+CDDEEFF0011223355446671010101010
++++++++++++++++++Time6 Aescipher generateWMatrix (1st 2d for loop): 3646
++++++++++++++++++Time10 Aescipher generateWMatrix (in 2nd for loop 4th (2d) for loop): 3480235
++++++++++++++++++Time11 Aescipher generateWMatrix (in 2nd for loop) exclusiveOr: 57261
++++++++++++++++++Time12 Aescipher generateWMatrix (in 2nd for loop 5th for loop) hitting exclusiveOr: 30620
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 29972
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 28388
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 28511
++++++++++++++++++Time7 Aescipher generateWMatrix (in 2nd for loop 1st for loop): 384691
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 27356
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 32554
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 27260
++++++++++++++++++Time10 Aescipher generateWMatrix (in 2nd for loop 4th (2d) for loop): 424294
++++++++++++++++++Time11 Aescipher generateWMatrix (in 2nd for loop) exclusiveOr: 10807
++++++++++++++++++Time12 Aescipher generateWMatrix (in 2nd for loop 5th for loop) hitting exclusiveOr: 27095
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 38183
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 36038
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 42617
++++++++++++++++++Time7 Aescipher generateWMatrix (in 2nd for loop 1st for loop): 859853
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 52221
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 37556
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 130642
++++++++++++++++++Time10 Aescipher generateWMatrix (in 2nd for loop 4th (2d) for loop): 1314520
++++++++++++++++++Time11 Aescipher generateWMatrix (in 2nd for loop) exclusiveOr: 34925
++++++++++++++++++Time12 Aescipher generateWMatrix (in 2nd for loop 5th for loop) hitting exclusiveOr: 28808
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 28850
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 123946
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 27468
++++++++++++++++++Time7 Aescipher generateWMatrix (in 2nd for loop 1st for loop): 442025
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 18300
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 17850
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 77523
++++++++++++++++++Time10 Aescipher generateWMatrix (in 2nd for loop 4th (2d) for loop): 336385
++++++++++++++++++Time11 Aescipher generateWMatrix (in 2nd for loop) exclusiveOr: 7709
++++++++++++++++++Time12 Aescipher generateWMatrix (in 2nd for loop 5th for loop) hitting exclusiveOr: 22057
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 18102
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 18703
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 18379
++++++++++++++++++Time7 Aescipher generateWMatrix (in 2nd for loop 1st for loop): 285661
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 19022
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 1638231
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 49225
++++++++++++++++++Time10 Aescipher generateWMatrix (in 2nd for loop 4th (2d) for loop): 259293
++++++++++++++++++Time11 Aescipher generateWMatrix (in 2nd for loop) exclusiveOr: 5691
++++++++++++++++++Time12 Aescipher generateWMatrix (in 2nd for loop 5th for loop) hitting exclusiveOr: 14834
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 12374
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 14786
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 12153
++++++++++++++++++Time7 Aescipher generateWMatrix (in 2nd for loop 1st for loop): 448485
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 78178
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 11635
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 11032
++++++++++++++++++Time10 Aescipher generateWMatrix (in 2nd for loop 4th (2d) for loop): 462383
++++++++++++++++++Time11 Aescipher generateWMatrix (in 2nd for loop) exclusiveOr: 6581
++++++++++++++++++Time12 Aescipher generateWMatrix (in 2nd for loop 5th for loop) hitting exclusiveOr: 12019
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 18246
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 17449
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 15713
++++++++++++++++++Time7 Aescipher generateWMatrix (in 2nd for loop 1st for loop): 521493
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 14811
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 15960
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 14373
++++++++++++++++++Time10 Aescipher generateWMatrix (in 2nd for loop 4th (2d) for loop): 367252
++++++++++++++++++Time11 Aescipher generateWMatrix (in 2nd for loop) exclusiveOr: 5371
++++++++++++++++++Time12 Aescipher generateWMatrix (in 2nd for loop 5th for loop) hitting exclusiveOr: 13892
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 10963
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 41501
++++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): 21416
++++++++++++++++++Time2 Aescipher generateWMatrix: 25004098
++++++++++++++++++Time5 rowtocol: 4608
++++++++++++++++++Time5 rowtocol: 2339
++++++++++++++++++Time5 rowtocol: 1393
++++++++++++++++++Time5 rowtocol: 4572
++++++++++++++++++Time5 rowtocol: 1212
++++++++++++++++++Time5 rowtocol: 2202
++++++++++++++++++Time5 rowtocol: 2025
++++++++++++++++++Time5 rowtocol: 3793
++++++++++++++++++Time5 rowtocol: 1242
++++++++++++++++++Time5 rowtocol: 3049
++++++++++++++++++Time5 rowtocol: 1322
++++++++++++++++++Time5 rowtocol: 2198
++++++++++++++++++Time5 rowtocol: 1400
++++++++++++++++++Time5 rowtocol: 2344
++++++++++++++++++Time5 rowtocol: 1448
++++++++++++++++++Time5 rowtocol: 2960
++++++++++++++++++Time5 rowtocol: 1260
++++++++++++++++++Time5 rowtocol: 2560
++++++++++++++++++Time5 rowtocol: 1361
++++++++++++++++++Time5 rowtocol: 2821
++++++++++++++++++Time5 rowtocol: 1254
++++++++++++++++++Time5 rowtocol: 2053
++++++++++++++++++Time5 rowtocol: 1614
++++++++++++++++++Time5 rowtocol: 1595
++++++++++++++++++Time5 rowtocol: 1324
++++++++++++++++++Time5 rowtocol: 1639
++++++++++++++++++Time5 rowtocol: 1159
++++++++++++++++++Time5 rowtocol: 1315
++++++++++++++++++Time3 Aescipher generateCipher: 25067868
+========Time2 Driver call to Aescipher.processInput2: 53830816
+Encrypted message is
+e5cfb47bd95e73359047ff48d0cabd87
+========Time3 Driver call to Aesdecipher.processinput3: 36016277
+Number of bits to be padded are
+10
+Decrypted message is
+CDDEEFF001122335544667
+========Time4 Driver final stuff: 7902095
+
+Process finished with exit code 0
+

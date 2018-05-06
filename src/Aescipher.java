@@ -24,31 +24,50 @@ public class Aescipher {
     wMatrix = new String[4][columnSize];
     inHex = new String[4][rowSize];
     plaintext = new String[4][4];
+
+    long startTime0 = System.nanoTime(); //Time
     for (int column = 0; column < rowSize; column++) {
       for (int row = 0; row < 4; row = row + 1) {
         inHex[row][column] = inputKey.substring(i, i + 2);
         i = i + 2;
       }
     }
+    long endTime0 = System.nanoTime();
+    long duration0 = (endTime0 - startTime0);  //divide by 1000000 to get milliseconds.
+    System.out.println(("+++++++++++++++++Time0 Aescipher (1st substring 2d for loop): " + duration0));
 
+    long startTime1 = System.nanoTime(); //Time
     for (int column = 0; column < 4; column++) {
       for (int row = 0; row < 4; row = row + 1) {
         plaintext[row][column] = plainText.substring(j, j + 2);
         j = j + 2;
       }
     }
+    long endTime1 = System.nanoTime();
+    long duration1 = (endTime1 - startTime1);  //divide by 1000000 to get milliseconds.
+    System.out.println(("+++++++++++++++++Time1 Aescipher (2nd substring 2d for loop): " + duration1));
 
     if (verbose.equals("1")) {
       System.out.println("Text to be encrypted after padding is");
       System.out.println(plainText);
     }
 
+    long startTime2 = System.nanoTime(); //Time
     generateWMatrix(rowSize, columnSize, rounds);
+    long endTime2 = System.nanoTime();
+    long duration2 = (endTime2 - startTime2);  //divide by 1000000 to get milliseconds.
+    System.out.println(("+++++++++++++++++Time2 Aescipher generateWMatrix: " + duration2));
+
+    long startTime3 = System.nanoTime(); //Time
     cipherFinal = generateCipher(inHex, plaintext, columnSize, rowSize, rounds);
+    long endTime3 = System.nanoTime();
+    long duration3 = (endTime3 - startTime3);  //divide by 1000000 to get milliseconds.
+    System.out.println(("+++++++++++++++++Time3 Aescipher generateCipher: " + duration3));
     return cipherFinal;
   }
 
   public static String MatrixToString(String[][] matrix) {
+    long startTime4 = System.nanoTime(); //Time
     String ctxt = "";
     for (int row = 0; row < 4; row++) {
       ctxt += matrix[row][0] + " ";
@@ -56,17 +75,24 @@ public class Aescipher {
       ctxt += matrix[row][2] + " ";
       ctxt += matrix[row][3] + " ";
     }
+    long endTime4 = System.nanoTime();
+    long duration4 = (endTime4 - startTime4);  //divide by 1000000 to get milliseconds.
+    System.out.println(("+++++++++++++++++Time4 MatrixToString: " + duration4));
     return ctxt.toUpperCase();
   }
 
   public static String[][] rowtocol(String[][] matrix) {
     String[][] tmp = new String[matrix.length][matrix.length];
+    long startTime5 = System.nanoTime();
     for (int i = 0; i < matrix.length; i++) {
       for (int j = 0; j < matrix.length; j++) {
         //transpose
         tmp[i][j] = matrix[j][i];
       }
     }
+    long endTime5 = System.nanoTime();
+    long duration5 = (endTime5 - startTime5);  //divide by 1000000 to get milliseconds.
+    System.out.println(("+++++++++++++++++Time5 rowtocol: " + duration5));
     return tmp;
   }
 
@@ -74,11 +100,16 @@ public class Aescipher {
 
     int roundCounter = 0;
     String cipherW = "";
+
+    long startTime6 = System.nanoTime(); //Time
     for (int row = 0; row < 4; row = row + 1) {
       for (int column = 0; column < rowSize; column++) {
         wMatrix[row][column] = inHex[row][column];
       }
     }
+    long endTime6 = System.nanoTime();
+    long duration6 = (endTime6 - startTime6);  //divide by 1000000 to get milliseconds.
+    System.out.println(("+++++++++++++++++Time6 Aescipher generateWMatrix (1st 2d for loop): " + duration6));
 
     // Processing the rest keys for keyMatrixW , by taking an intermediate
     // matrix wNewMatrix for processing purpose
@@ -91,26 +122,40 @@ public class Aescipher {
 
       if (column % rowSize != 0 && rowSize == 8) {
         if (column % 4 == 0) {
+          long startTime7 = System.nanoTime();
           for (int row = 0; row < 4; row++) {
             wMatrix[row][column] = aesSbox(wMatrix[row][column - 1]);
             wMatrix[row][column] = exclusiveOr(
                 wMatrix[row][column - rowSize], wMatrix[row][column]);
 
           }
+          long endTime7 = System.nanoTime();
+          long duration7 = (endTime7 - startTime7);  //divide by 1000000 to get milliseconds.
+          System.out.println(("+++++++++++++++++Time7 Aescipher generateWMatrix (in 2nd for loop 1st for loop): " + duration7));
         } else {
+
+          long startTime8 = System.nanoTime();
           for (int row = 0; row < 4; row++) {
 
             wMatrix[row][column] = exclusiveOr(
                 wMatrix[row][column - rowSize],
                 wMatrix[row][column - 1]);
           }
+          long endTime8 = System.nanoTime();
+          long duration8 = (endTime8 - startTime8);  //divide by 1000000 to get milliseconds.
+          System.out.println(("+++++++++++++++++Time8 Aescipher generateWMatrix (in 2nd for loop 2nd for loop): " + duration8));
         }
       } else if (column % rowSize != 0 && rowSize != 8) {
+
+        long startTime9 = System.nanoTime();
         for (int row = 0; row < 4; row++) {
 
           wMatrix[row][column] = exclusiveOr(wMatrix[row][column - rowSize],
               wMatrix[row][column - 1]);
         }
+        long endTime9 = System.nanoTime();
+        long duration9 = (endTime9 - startTime9);  //divide by 1000000 to get milliseconds.
+        System.out.println(("+++++++++++++++++Time9 Aescipher generateWMatrix (in 2nd for loop 3rd for loop): " + duration9));
 
       } else if (column % rowSize == 0) {
 
@@ -124,19 +169,34 @@ public class Aescipher {
         wNewMatrix[0][2] = wMatrix[3][column - 1];
         wNewMatrix[0][3] = wMatrix[0][column - 1];
         // Once the shifting is done we do the s-box transformation
+
+        long startTime10 = System.nanoTime();
         for (int i = 0; i < 1; i++) {
           for (int j = 0; j < 4; j++) {
             wNewMatrix[i][j] = aesSbox(wNewMatrix[i][j]);
           }
         }
+        long endTime10 = System.nanoTime();
+        long duration10 = (endTime10 - startTime10);  //divide by 1000000 to get milliseconds.
+        System.out.println(("+++++++++++++++++Time10 Aescipher generateWMatrix (in 2nd for loop 4th (2d) for loop): " + duration10));
+
+        long startTime11 = System.nanoTime();
         int r = column / rowSize;
         // Performing XOR of the R_CON value and new matrix value
         wNewMatrix[0][0] = exclusiveOr(aesRcon(r), wNewMatrix[0][0]);
+        long endTime11 = System.nanoTime();
+        long duration11 = (endTime11 - startTime11);  //divide by 1000000 to get milliseconds.
+        System.out.println(("+++++++++++++++++Time11 Aescipher generateWMatrix (in 2nd for loop) exclusiveOr: " + duration11));
+
         // Final computation of recursively XOR the values
+        long startTime12 = System.nanoTime();
         for (int row = 0; row < 4; row++) {
           wMatrix[row][column] = exclusiveOr(wMatrix[row][column - rowSize],
               wNewMatrix[0][row]);
         }
+        long endTime12 = System.nanoTime();
+        long duration12 = (endTime12 - startTime12);  //divide by 1000000 to get milliseconds.
+        System.out.println(("+++++++++++++++++Time12 Aescipher generateWMatrix (in 2nd for loop 5th for loop) hitting exclusiveOr: " + duration12));
       }
     }
   }

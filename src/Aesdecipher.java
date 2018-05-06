@@ -246,7 +246,7 @@ public class Aesdecipher {
       // calling computeMatrix to generate 4*44 matrix
       computingMatrix();
     } catch (Exception e) {
-      System.out.println("aesRoundKeys" + e);
+      // System.out.println("aesRoundKeys" + e);
     }
   }
 
@@ -310,7 +310,7 @@ public class Aesdecipher {
         }
       }
     } catch (Exception e) {
-      System.out.println(" error computing matrix:" + e);
+      //System.out.println(" error computing matrix:" + e);
     }
   }
 
